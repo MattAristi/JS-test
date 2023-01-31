@@ -13,8 +13,8 @@
 if (header == 2) {
 
     let conditionals = parseInt(prompt('Ingrese la opcion deseada:\n 1- <2\n 2- &&\n 3- ||'))
-    if (conditionals) {
-        if (conditionals == 1) {
+    switch (conditionals) {
+        case 1:
 
             let nombreU = prompt('Ingresa el nombre del perro');
 
@@ -33,8 +33,9 @@ if (header == 2) {
                 alert('No ha ingresado un texto')
                 console.log('Texto no ingresado');
             }
-        }
-        if (conditionals == 2) {
+            break;
+
+        case 2:
             let userName = prompt('Ingresa tu nombre: ');
             let userLastName = prompt('Ingresa tu apellido: ');
             if (userName != '' && userLastName != '') {
@@ -47,8 +48,9 @@ if (header == 2) {
                     alert('No pusiste tu apellido.')
                 }
             }
-        }
-        if (conditionals == 3) {
+            break;
+
+        case 3:
             let sport = prompt('Elige entre futbol y basquetbol, no hay dato sobre otro deporte')
             console.log(sport);
             console.log(sport.toLowerCase());
@@ -63,9 +65,11 @@ if (header == 2) {
             } else {
                 alert('No hay dato de ese deporte')
             }
+            break;
 
-        }
-    } else {
-        alert('Tu no has ingresado nada')
+
+        default:
+            alert('Tu no has ingresado nada')
+            break;
     }
 }
