@@ -1,8 +1,8 @@
 if (header == 3) {
 
     let iterations = parseInt(prompt('Ingrese la opcion deseada:\n 1- For.\n 2- While.\n 3- Do While.\n 4- Switch.'))
-    if (iterations) {
-        if (iterations == 1) {
+    switch (iterations) {
+        case 1 :
             for (let i = 1; i < 10; i++) {
 
                 console.log('Ya llegamos a la india?  ' + i);
@@ -26,9 +26,8 @@ if (header == 3) {
                 console.log(respuesta);
                 alert(respuesta)
             }
-
-        }
-        if (iterations == 2) {
+            break;
+        case 2 : 
             let liveGps = 'no';
             let cantPreguntas = 0
             while (liveGps != 'si') {
@@ -46,8 +45,8 @@ if (header == 3) {
                     alert(liveGps)
                 }
             }
-        }
-        if (iterations==3){
+            break;
+        case 3:
             let confirmationDoWile='si';
             let userNameDoWhile;
             let userAgeDoWhile=13;
@@ -83,9 +82,9 @@ if (header == 3) {
                 console.log('userName: ',userNameDoWhile);
                 alert('Estas a un paso de lograrlo')
             }
-            
-        }
-        if (iterations==4){
+            break;
+        
+        case 4:
             let pais = prompt('Escribe el nombre de un pais que haya sido campeon Mundial.')
             console.log(pais.toLowerCase());
             switch (pais.toLowerCase()) {
@@ -97,6 +96,9 @@ if (header == 3) {
                 default:
                     alert('todo puto')
             } 
-        }
+            break;
+        default:
+            alert('El dato no es correcto')
+            break;
     }
 }
