@@ -1,6 +1,7 @@
-if (header == 4) {
 
-    let userNamePPT = '';
+function desafioPPT(nombre){
+    
+    let userNamePPT = nombre;
     let userChoosePPT = '';
     let cpuRandomChoose = '';
     let userScorePPT = 0;
@@ -11,11 +12,7 @@ if (header == 4) {
     const papel = 'papel';
     const tijera = 'tijera';
 
-    userNamePPT = prompt('Ingresa tu nombre:').toLowerCase();
-    console.log(userNamePPT);
-
-    userNamePPT = userNamePPT[0].toUpperCase() + userNamePPT.slice(1);
-    console.log(userNamePPT);
+   
 
     do {
         userChoosePPT = parseInt(prompt('Elije una opción ingresando el número correspondiente:\n 1- Piedra.\n 2- Papel.\n 3-Tijera.\n 4- Salir del juego'));
