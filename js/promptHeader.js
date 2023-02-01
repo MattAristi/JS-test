@@ -1,1 +1,1 @@
-let header= parseInt(prompt('Ingresa el numero de modulo que te interesa: \n 1- Variables \n 2- Condicionales \n 3- Iteraciones' ))
+let header= parseInt(prompt('Ingresa el numero de modulo que te interesa: \n 1- Variables \n 2- Condicionales \n 3- Iteraciones.\n 4- Piedra, papel o tijera ' ))

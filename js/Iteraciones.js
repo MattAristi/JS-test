@@ -64,9 +64,6 @@ if (header == 3) {
                     break;
                 }
                 userNameDoWhile =prompt('Elige tu nombre de usuario.');
-                // if (userAgeDoWhile!=null){
-                // userNameDoWhile = userNameDoWhile[0].toUpperCase()+userNameDoWhile.slice(1).toLowerCase()
-                // }
                 console.log('userName: ',userNameDoWhile);
                 userAgeDoWhile = parseInt(prompt('Ingresa tu edad.'));
                 console.log(userAgeDoWhile);
