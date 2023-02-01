@@ -1,4 +1,4 @@
-if (header == 3) {
+function iteraciones() {
 
     let iterations = parseInt(prompt('Ingrese la opcion deseada:\n 1- For.\n 2- While.\n 3- Do While.\n 4- Switch.'))
     switch (iterations) {

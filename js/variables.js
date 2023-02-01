@@ -1,4 +1,4 @@
-if (header==1){
+function variables(){
 // linea de comentario
 /*esto es comentario multilinea
 1

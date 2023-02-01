@@ -10,7 +10,7 @@
 
 
 
-if (header == 2) {
+function conditionals() {
 
     let conditionals = parseInt(prompt('Ingrese la opcion deseada:\n 1- <2\n 2- &&\n 3- ||'))
     switch (conditionals) {
