@@ -84,4 +84,5 @@ function desafioPPT(nombre){
 
 
     } while (userChoosePPT != 'esc');
+    selectOptions()
 }

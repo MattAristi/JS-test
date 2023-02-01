@@ -98,4 +98,5 @@ function iteraciones() {
             alert('El dato no es correcto')
             break;
     }
+    selectOptions()
 }

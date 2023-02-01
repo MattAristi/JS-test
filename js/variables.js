@@ -58,6 +58,7 @@ if(resultado3 % 2 == 0) {
 alert(['Resultado variable fija: '+resultado, ' Resultado prompt1: '+resultado2, 'Resultado prompt2: '+resultado3])
 alert('El ultimo resultado es: '+ parImpar)
 console.log('El ultimo resultado es: ', parImpar);
+selectOptions()
 }
 
 

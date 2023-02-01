@@ -72,4 +72,5 @@ function conditionals() {
             alert('Tu no has ingresado nada')
             break;
     }
+    selectOptions()
 }
