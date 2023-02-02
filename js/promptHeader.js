@@ -3,18 +3,18 @@ let header;
 
 function capitalizeNames (words) {
     let wordsLowerArray=words.toLowerCase().split(' ');
-    console.log(wordsLowerArray);
+    console.log('Array generado en lowercase',wordsLowerArray);
     let wordsUpperCasedArray = wordsLowerArray.map(palabraInd =>{
         let arrayUpercased = palabraInd[0].toUpperCase() + palabraInd.slice(1);
         return arrayUpercased;
     })
     console.log('Array con primera letra uppercased',wordsUpperCasedArray);
     words=wordsUpperCasedArray.join(' ');
-    console.log('Array a string:',words);
+    console.log('String del nombre transfomado:',words);
     return words;
 }
 let userName = capitalizeNames(prompt('Ingresa tu nombre:'))
-console.log(userName);
+console.log('valor de la variable',userName);
 
 
 function selectOptions() {

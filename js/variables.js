@@ -9,54 +9,95 @@ function variables(){
 var nombre = "Matias";
 
 // variables reservadas
+alert('Para visualizar cambios tienes que abrir la consola.')
 
-var name1 ="July"; //deprecada
-let  name2 ="Marto";
-name1="Mono"
+var name1Var ="July"; //deprecada
+console.log('Valor de la variable hardcodeada inicialmente: ', name1Var);
+let  name2Var ="Marto";
+name1Var=prompt('Cambia el valor de la variable name1Var, ingresá tu nombre completo.')
+console.log('Valor de la variable modificada por prompt: ', name1Var);
+name1Var= capitalizeNames(name1Var)
+console.log('Nombre modificado a mayuscula en la primera palabra. ',name1Var );
+// Creando arrays
+const array1 = [name1Var, name2Var]; //el contenido no puede variar
+let array2 = [name2Var, name1Var]; // puede variar el contenido
 
-const array1 = [name1, name2]; //el contenido no puede variar
-let array2 = {name1, name2};
-console.log(array1);
-console.log(array2);
-name2='Pablo'
-array2 = {name1, name2};
-console.log(array2);
+console.log('Array 1 no modificable ',array1);
+console.log('Array 2 modificables',array2);
+// MOdifica uno de los valore del array
+name2Var=capitalizeNames(prompt('Elige otro nombre para cambiar en el array2:'))
+array2 = [name1Var, name2Var];
+console.log('Array 2 modificado: ',array2);
 
 // manejo de numeros
 
 let numeroA;
 let numeroB;
-
-numeroA=345;
-numeroB=45;
 let operacion;
-let resultado =numeroA-numeroB;
 
-operacion= []
+alert('Continuamos con numeros.')
 
-console.log('numeroA-numeroB=',resultado);
+// para setear el tipo de operacion a realizar.
+numeroA=prompt('Ingresa el primer numero.');
 
-let numeroC= prompt('ingresa un numero:');
-let resultado2= numeroA+numeroC;
-console.log('numeroA+numeroC sin parsear=',resultado2);
-let numeroD = parseInt(numeroC);
-let numeroE=parseInt(prompt('ingresa un numero y lo parseo:'))
-let resultado3= numeroA+numeroE;
+do {
+    operacion= prompt('Ingresa la operacion a realizar. ( +, -, *, /)')
+    if (operacion!='+' && operacion!='-' && operacion!='*' && operacion!='/'){
+        alert('Caracter no permitido')
+    }
+} while (operacion!='+' && operacion!='-' && operacion!='*' && operacion!='/');
 
-resultado2= numeroA+numeroD;
-console.log('numeroA+numeroC parseado en 2 pasos=',resultado2);
-console.log('numeroA+numeroC parseado directamente=',resultado3);
+
+
+numeroB=prompt('Ingresa el segundo numero.');
+
+
+//func flecha para la realizar la operacion.
+const resultado = (numA,op,numB)=>{
+    let res;
+    switch (op) {
+        case '+':
+            res = numA + numB
+        break;
+        case '-':
+            res= numA - numB
+        break;
+        case '*':
+            res= numA * numB
+        break;
+        case '/':
+            res= numA / numB
+        break;
+    }
+    return res
+};
+let resSinParsear=resultado(numeroA,operacion,numeroB)
+let resParseado=resultado(parseInt(numeroA),operacion,parseInt(numeroB))
+
+
+console.log(`Los resultados sin parsear deberian fallar solo en la suma.\n\n Resultado 1 sin parsear de: \n Numero A (${numeroA}) ${operacion} numero B (${numeroB}) = `,numeroA+operacion+numeroB);
+console.log(`Resultado 1 parseado de: \n Numero A (${numeroA}) ${operacion} numero B (${numeroB}) = `,resParseado);
+
+let numeroC= parseInt(prompt('ingresa un tercer numero:'));
+let res2=resultado(parseInt(numeroA),operacion,numeroC)
+
+console.log(`Resultado 2 de numero A (${numeroA}) ${operacion} numero C (${numeroC})= `,res2)
+
+
+
+
+
 
 let parImpar;
 
-if(resultado3 % 2 == 0) {
+if(res2 % 2 == 0) {
     parImpar='par';
 }else {
     parImpar='impar'
 }
 
-alert(['Resultado variable fija: '+resultado, ' Resultado prompt1: '+resultado2, 'Resultado prompt2: '+resultado3])
-alert('El ultimo resultado es: '+ parImpar)
+alert(`Los resultados sin parsear deberian fallar solo en la suma.\n\n Resultado 1 sin parsear = ${resSinParsear} \n Resultado 1 parseado = ${resParseado}\n Resultado 2 = ${res2}\n El ultimo resultado es ${parImpar}  `)
+
 console.log('El ultimo resultado es: ', parImpar);
 selectOptions()
 }
