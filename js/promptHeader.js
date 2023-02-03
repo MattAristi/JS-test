@@ -1,6 +1,8 @@
 
 let header;
+// Funciones
 
+// funcion para poner mayuscula en cada palabra del string ingresado.
 function capitalizeNames (words) {
     let wordsLowerArray=words.toLowerCase().split(' ');
     console.log('Array generado en lowercase',wordsLowerArray);
@@ -13,6 +15,28 @@ function capitalizeNames (words) {
     console.log('String del nombre transfomado:',words);
     return words;
 }
+// funcion para avisar que el dato ingresado es erroneo
+const wrongData=()=>{
+    alert('El dato ingresado no es correcto')
+    console.log('El dato ingresado no es correcto')
+}
+
+// Funcion que verifica que el dato ingresado se encuentar dentro d elos parametros.
+
+const doWileCheckNumber = (wereTo, cantOpciones, opcion1, opcion2, opcion3, opcion4, opcion5) => {
+    let selectedOption;
+    do {
+        selectedOption = prompt(`${opcion1}\n${opcion2}\n ${(!opcion3)}\n${!opcion4}\n${!opcion5}\n`)
+        console.log(cantOpciones);
+        if (selectedOption<1 || selectedOption>cantOpciones) {
+            console.log('wrong ', selectedOption );
+            wrongData();
+            wereTo();
+        }
+    } while (selectedOption>1 && selectedOption<cantOpciones);
+    return selectedOption
+}
+
 let userName = capitalizeNames(prompt('Ingresa tu nombre:'))
 console.log('valor de la variable',userName);
 
@@ -46,4 +70,4 @@ function selectOptions() {
     }
 }
 
-selectOptions()
+selectOptions();

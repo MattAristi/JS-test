@@ -16,7 +16,7 @@ function conditionals() {
     switch (conditionals) {
         case 1:
 
-            let nombreU = capitalize(prompt('Ingresa el nombre del perro'));
+            let nombreU = capitalizeNames(prompt('Ingresa el nombre del perro'));
 
             let edad;
             edad = parseInt(prompt('ingresa la edad del perro: ' + nombreU));
@@ -40,6 +40,7 @@ function conditionals() {
             let userLastName = capitalizeNames(prompt('Ingresa tu apellido: '));
             if (userName != '' && userLastName != '') {
                 alert('Este es su nombre completo. ' + userName + ' ' + userLastName)
+                console.log('Este es su nombre completo. ' + userName + ' ' + userLastName);
             } else {
                 if (userName == '') {
                     alert('No pusiste tu nombre.')
