@@ -8,9 +8,9 @@ function desafioPPT(nombre){
     let cpuScorePPT = 0;
     let empatesPPT = 0;
     let resultadoFinalPPT;
-    const piedra = 'piedra;';
-    const papel = 'papel';
-    const tijera = 'tijera';
+    const piedra = 'Piedra;';
+    const papel = 'Papel';
+    const tijera = 'Tijera';
 
    
 
