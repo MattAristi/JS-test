@@ -10,7 +10,7 @@ const salida = (page)=>{
         selectOptions()
     }
     if (page=='x')
-    alert('Gracias por participar')
+    alert('Gracias por probar')
 }
 
 // genera un array de cada palabra en una cadena de texto previamente Lowercaseada.
@@ -58,12 +58,12 @@ const doWileCheckNumber = (wereTo, cantOpciones, opcion1, opcion2, opcion3, opci
     console.log('tercero',selectedOption);
     return selectedOption
 }
-//&& selectedOption!='x' && selectedOption!=''
+// Asigna a una variable el nombre de usuario con cappital leter en la primera letra con la fincion capitalized.
 
 let userName = capitalizeNames(prompt('Ingresa tu nombre:'))
 console.log('valor de la variable',userName);
 
-
+// funcion para elegir opcion inicial en el navegador con las opciones declaradas en el prompt.
 function selectOptions() {
 
 
