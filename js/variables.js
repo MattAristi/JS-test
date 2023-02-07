@@ -1,4 +1,4 @@
-function variables() {
+function variables(userName) {
     // linea de comentario
     /*esto es comentario multilinea
     1
@@ -13,13 +13,13 @@ function variables() {
         // var nombre = "Matias";
 
         // variables reservadas
-        alert('Para visualizar cambios tienes que abrir la consola.')
+        alert(userName+' tienes que abrir la consola.')
 
         var name1Var = "July"; // "var" deprecada
         console.log('Valor de la variable hardcodeada inicialmente: ', name1Var);
         let name2Var = "Marto";
 
-        name1Var = prompt('Cambia el valor de la variable name1Var, ingresá tu nombre completo.')
+        name1Var = prompt(userName+' cambia el valor de la variable name1Var, ingresá un nombre completo.')
         console.log('Valor de la variable modificada por prompt: ', name1Var);
         //valor de la variable con funcion capitalizeNames que pone mayuscula en la primera letra de cada palabra
         name1Var = capitalizeNames(name1Var)
@@ -49,10 +49,10 @@ function variables() {
         let numeroB;
         let operacion;
 
-        alert('Continuamos con numeros.')
+        alert('Continuamos con numeros '+userName+'.')
 
         // seteao del tipo de operacion a realizar.
-        numeroA = prompt('Ingresa el primer numero.');
+        numeroA = prompt(userName+' ingresa el primer numero.');
 
         do {
             operacion = prompt('Ingresa la operacion a realizar. ( +, -, *, /)')

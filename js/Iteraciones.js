@@ -1,4 +1,4 @@
-function iteraciones() {
+function iteraciones(userName) {
 
     let optionIteration = doWileCheckNumber(iteraciones, 4, '1- Bucle for.', '2- Bucle while.', '3- Bucle do-while', '4- Swift')
 
@@ -6,7 +6,7 @@ function iteraciones() {
         for (let i = 1; i < 10; i++) {
 
             console.log('Ya llegamos a la india?  ' + i);
-            let respuesta = prompt('Ya llegamos a la india? si/no según corresponda')
+            let respuesta = prompt(userName+' ya llegamos a la india? si/no según corresponda')
             if (respuesta == '') {
                 respuesta = 'no'
             }
@@ -34,13 +34,13 @@ function iteraciones() {
         while (liveGps != 'si') {
             cantPreguntas++
             console.log('Ya llegamos a la india? ' + cantPreguntas);
-            liveGps = prompt('Ya llegamos a la india? Ingresa si/no según el caso')
+            liveGps = prompt(userName+' ya llegamos a la india? Ingresa si/no según el caso')
             if (liveGps == '') {
                 liveGps = 'no';
             }
             if (liveGps == 'si') {
                 console.log(liveGps);
-                alert('Espera, si si, hemos llegado')
+                alert('Espera '+userName+', si si, hemos llegado')
             } else {
                 console.log(liveGps);
                 alert(liveGps)
@@ -55,13 +55,13 @@ function iteraciones() {
         let userAgeDoWhile = 13;
         do {
             if (confirmationDoWile != 'si' || userNameDoWhile == '' || userAgeDoWhile != parseInt(userAgeDoWhile)) {
-                alert('Intentalo nuevamente');
+                alert('Intentalo nuevamente '+userName+'.');
             }
             if (userAgeDoWhile < 13) {
                 alert('Eres menor de edad')
                 break;
             }
-            confirmationDoWile = prompt('Deseas generar un usuario? si/no.');
+            confirmationDoWile = prompt(userName+' desea generar un usuario? si/no.');
             if (confirmationDoWile == 'no') {
                 alert('Gracias, vuelva prontos.');
                 break;
@@ -80,22 +80,41 @@ function iteraciones() {
         if (userAgeDoWhile >= 13) {
             userNameDoWhile = userNameDoWhile[0].toUpperCase() + userNameDoWhile.slice(1).toLowerCase()
             console.log('userName: ', userNameDoWhile);
-            alert('Estas a un paso de lograrlo')
+            alert(userName+' estas a un paso de lograrlo')
         }
         selectOptions()
     }
 
     if (optionIteration == 4) {
-        let pais = prompt('Escribe el nombre de un pais que haya sido campeon Mundial.')
-        console.log(pais.toLowerCase());
-        switch (pais.toLowerCase()) {
-            case 'argentina':
+        let pais =capitalizeNames (prompt(userName+' escribe el nombre de un pais que haya sido campeon Mundial.'))
+        console.log(pais);
+        switch (pais) {
+            case 'Argentina':
                 alert('Ganamos 3 copas')
                 break;
-            case 'brasil':
+            case 'Brasil':
                 alert('Ganaron 5 copas')
+                break;
+            case 'Italia':
+                alert('Ganaron 4 copas')
+                break; 
+            case 'Alemania':
+                alert('Ganaron 4 copas')
+                break;
+            case 'Uruguay':
+                alert('Ganaron 2 copas')
+                break;
+            case 'Francia':
+                alert('Ganaron 2 copas')
+                break;
+            case 'Inglaterra':
+                alert('Ganaron 1 copa')
+                break;
+            case 'España':
+                alert('Ganaron 1 copa')
+                break;
             default:
-                alert('todo puto')
+                alert('No han ganado nunca')
         }
         selectOptions()
     }

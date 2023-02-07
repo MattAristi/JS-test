@@ -10,7 +10,7 @@
 
 
 
-function conditionals() {
+function conditionals(userName) {
 
     let optionConditionals = doWileCheckNumber(conditionals, 3, ' 1- <2','2- &&', '3- ||')
     
@@ -18,7 +18,7 @@ function conditionals() {
             
         
 
-            let nombreU = capitalizeNames(prompt('Ingresa el nombre del perro'));
+            let nombreU = capitalizeNames(prompt(userName + ' ingresa el nombre de tu perro'));
 
             let edad;
             edad = parseInt(prompt('ingresa la edad del perro: ' + nombreU));
@@ -40,13 +40,13 @@ function conditionals() {
         if (optionConditionals==2){
 
         
-            let userName = capitalizeNames(prompt('Ingresa tu nombre: '));
-            let userLastName = capitalizeNames(prompt('Ingresa tu apellido: '));
-            if (userName != '' && userLastName != '') {
-                alert('Este es su nombre completo. ' + userName + ' ' + userLastName)
-                console.log('Este es su nombre completo. ' + userName + ' ' + userLastName);
+            let userNameCond = capitalizeNames(prompt(userName+' ingresa un nombre: '));
+            let userLastName = capitalizeNames(prompt(userName+' ingresa el apellido: '));
+            if (userNameCond != '' && userLastName != '') {
+                alert('Este es su nombre completo. ' + userNameCond + ' ' + userLastName)
+                console.log('Este es su nombre completo. ' + userNameCond + ' ' + userLastName);
             } else {
-                if (userName == '') {
+                if (userNameCond == '') {
                     alert('No pusiste tu nombre.')
                 }
                 if (userLastName == '') {
@@ -58,7 +58,7 @@ function conditionals() {
         if (optionConditionals==3) {
             
         
-            let sport = prompt('Elige entre futbol y basquetbol, no hay dato sobre otro deporte')
+            let sport = prompt(userName+' elige entre futbol y basquetbol, no hay dato sobre otro deporte')
             console.log(sport);
             console.log(sport.toLowerCase());
             if (sport.toLowerCase() == 'basquetbol' || sport.toLowerCase() == 'basketball' || sport.toLowerCase() == 'futbol' || sport.toLowerCase() == 'football') {
@@ -70,7 +70,7 @@ function conditionals() {
                     alert('El mejor fue Michael Jordan')
                 }
             } else {
-                alert('No hay dato de ese deporte')
+                alert(userName+' no hay dato de ese deporte')
             }
             selectOptions()
         }

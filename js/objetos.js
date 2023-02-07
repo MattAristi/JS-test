@@ -43,7 +43,7 @@ function objetosT() {
         let objectMueble;
         let arrayMueble;
         do {
-            objectMueble = prompt('Ingresa los datos:\n "tipo, modelo, material, formato, color, Certificado INDCAR en caso de tenerlo"\n En ese orden y separados solo por un espacio entree si.\n Ingresar minimo 5 datos, maximo 6.\n Para salir escribí una x')
+            objectMueble = prompt(userName+' ingresa los datos:\n "tipo, modelo, material, formato, color, Certificado INDCAR en caso de tenerlo"\n En ese orden y separados solo por un espacio entree si.\n Ingresar minimo 5 datos, maximo 6.\n Para salir escribí una x')
             arrayMueble = stringArray(objectMueble)
             console.log(arrayMueble);
             console.log(arrayMueble.length);

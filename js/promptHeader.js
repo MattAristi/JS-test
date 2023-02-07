@@ -67,23 +67,23 @@ console.log('valor de la variable',userName);
 function selectOptions() {
 
 
-    header = parseInt(prompt('Ingresa el numero de modulo que te interesa: \n 1- Variables \n 2- Condicionales \n 3- Iteraciones.\n 4- Piedra, papel o tijera. \n 5- Objetos.\n 6- Salir '))
+    header = parseInt(prompt(userName+', puedes ingresar el numero de modulo que te interese: \n 1- Variables \n 2- Condicionales \n 3- Iteraciones.\n 4- Piedra, papel o tijera. \n 5- Objetos.\n 6- Salir '))
 
     switch (header) {
         case 1:
-            variables();
+            variables(userName);
             break;
         case 2:
-            conditionals();
+            conditionals(userName);
             break; 
         case 3:
-            iteraciones();
+            iteraciones(userName);
             break;          
         case 4:
             desafioPPT(userName);
             break;
         case 5:
-            objetosT();
+            objetosT(userName);
             break;
         case 6:
             alert('Gracias por participar');
