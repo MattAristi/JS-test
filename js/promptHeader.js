@@ -2,9 +2,28 @@
 let header;
 // Funciones
 
+// Funcion de salida
+
+const salida = (page)=>{
+    page=page.toLowerCase()
+    if (page=='v'){
+        selectOptions()
+    }
+    if (page=='x')
+    alert('Gracias por participar')
+}
+
+// genera un array de cada palabra en una cadena de texto previamente Lowercaseada.
+function stringArray(words) {
+    (words ? words: words='userx')
+    let wordsArray=words.toLowerCase().split(' ');
+    return wordsArray
+}
+
+
 // funcion para poner mayuscula en cada palabra del string ingresado.
 function capitalizeNames (words) {
-    let wordsLowerArray=words.toLowerCase().split(' ');
+    let wordsLowerArray = stringArray(words)
     console.log('Array generado en lowercase',wordsLowerArray);
     let wordsUpperCasedArray = wordsLowerArray.map(palabraInd =>{
         let arrayUpercased = palabraInd[0].toUpperCase() + palabraInd.slice(1);
@@ -26,16 +45,20 @@ const wrongData=()=>{
 const doWileCheckNumber = (wereTo, cantOpciones, opcion1, opcion2, opcion3, opcion4, opcion5) => {
     let selectedOption;
     do {
-        selectedOption = prompt(`${opcion1}\n${opcion2}\n ${(!opcion3)}\n${!opcion4}\n${!opcion5}\n`)
-        console.log(cantOpciones);
-        if (selectedOption<1 || selectedOption>cantOpciones) {
+        selectedOption = prompt(`${(opcion1 ? opcion1 : '')} ${(opcion2 ? '\n'+opcion2 : '')} ${(opcion3 ? '\n'+opcion3 : '')} ${(opcion4 ? '\n'+opcion4 : '')} ${(opcion5 ? '\n'+opcion5 : '')}\n Para salir ingresa x. \n Para volver al menu anterior ingresa v.`)
+        console.log('primero',selectedOption);
+        
+        
+        if ((isNaN(selectedOption) ? true :selectedOption)<1 || (isNaN(selectedOption) ? true : selectedOption>cantOpciones) &&  selectedOption!='x' &&  selectedOption!='v') {
+            console.log('segundo',selectedOption);
             console.log('wrong ', selectedOption );
             wrongData();
-            wereTo();
         }
-    } while (selectedOption>1 && selectedOption<cantOpciones);
+    } while ((isNaN(selectedOption) ? true :selectedOption)<1 || (isNaN(selectedOption) ? true : selectedOption>cantOpciones) &&  selectedOption!='x' &&  selectedOption!='v');
+    console.log('tercero',selectedOption);
     return selectedOption
 }
+//&& selectedOption!='x' && selectedOption!=''
 
 let userName = capitalizeNames(prompt('Ingresa tu nombre:'))
 console.log('valor de la variable',userName);
@@ -44,7 +67,7 @@ console.log('valor de la variable',userName);
 function selectOptions() {
 
 
-    header = parseInt(prompt('Ingresa el numero de modulo que te interesa: \n 1- Variables \n 2- Condicionales \n 3- Iteraciones.\n 4- Piedra, papel o tijera \n 5- salir '))
+    header = parseInt(prompt('Ingresa el numero de modulo que te interesa: \n 1- Variables \n 2- Condicionales \n 3- Iteraciones.\n 4- Piedra, papel o tijera. \n 5- Objetos.\n 6- Salir '))
 
     switch (header) {
         case 1:
@@ -60,6 +83,9 @@ function selectOptions() {
             desafioPPT(userName);
             break;
         case 5:
+            objetosT();
+            break;
+        case 6:
             alert('Gracias por participar');
             break;
         default:

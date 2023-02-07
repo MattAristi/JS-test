@@ -37,6 +37,8 @@ function variables() {
         //refresca el dato del array
         array2 = [name1Var, name2Var];
         console.log('Array 2 modificado: ', array2);
+
+        selectOptions()
     }
 
     
@@ -112,7 +114,8 @@ function variables() {
         alert(`Los resultados sin parsear deberian fallar solo en la suma.\n\n Resultado 1 sin parsear = ${resSinParsear} \n Resultado 1 parseado = ${resParseado}\n Resultado 2 = ${res2}\n El ultimo resultado es ${parImpar}  `)
 
         console.log('El ultimo resultado es: ', parImpar);
+        selectOptions()
     }
-    //llama a funcion para volver al menu inicial
-    selectOptions()
+    //llama a funcion para volver al menu inicial o salir
+    salida(optionVariables)
 }

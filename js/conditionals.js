@@ -12,9 +12,11 @@
 
 function conditionals() {
 
-    let conditionals = parseInt(prompt('Ingrese la opcion deseada:\n 1- <2\n 2- &&\n 3- ||'))
-    switch (conditionals) {
-        case 1:
+    let optionConditionals = doWileCheckNumber(conditionals, 3, ' 1- <2','2- &&', '3- ||')
+    
+        if (optionConditionals ==1) {
+            
+        
 
             let nombreU = capitalizeNames(prompt('Ingresa el nombre del perro'));
 
@@ -33,9 +35,11 @@ function conditionals() {
                 alert('No ha ingresado un texto')
                 console.log('Texto no ingresado');
             }
-            break;
+            selectOptions()
+        }    
+        if (optionConditionals==2){
 
-        case 2:
+        
             let userName = capitalizeNames(prompt('Ingresa tu nombre: '));
             let userLastName = capitalizeNames(prompt('Ingresa tu apellido: '));
             if (userName != '' && userLastName != '') {
@@ -49,9 +53,11 @@ function conditionals() {
                     alert('No pusiste tu apellido.')
                 }
             }
-            break;
-
-        case 3:
+            selectOptions()
+        }    
+        if (optionConditionals==3) {
+            
+        
             let sport = prompt('Elige entre futbol y basquetbol, no hay dato sobre otro deporte')
             console.log(sport);
             console.log(sport.toLowerCase());
@@ -66,12 +72,8 @@ function conditionals() {
             } else {
                 alert('No hay dato de ese deporte')
             }
-            break;
+            selectOptions()
+        }
 
-
-        default:
-            alert('Tu no has ingresado nada')
-            break;
+        salida(optionConditionals)
     }
-    selectOptions()
-}
