@@ -12,68 +12,79 @@
 
 function conditionals(userName) {
 
-    let optionConditionals = doWileCheckNumber(conditionals, 3, ' 1- <2','2- &&', '3- ||')
-    
-        if (optionConditionals ==1) {
-            
-        
+    //asigna el valor de option conditional mediante la funcion dowhilechecknumber para elegir la opcion deseada 
 
-            let nombreU = capitalizeNames(prompt(userName + ' ingresa el nombre de tu perro'));
+    let optionConditionals = doWileCheckNumber(conditionals, 3, ' 1- <2', '2- &&', '3- ||')
 
-            let edad;
-            edad = parseInt(prompt('ingresa la edad del perro: ' + nombreU));
+    // condicional > < = usando de comparativa la edad de un perro para determinar su adultez
+    if (optionConditionals == 1) {
 
-            if (edad) {
-                if (edad < 2) {
-                    alert(nombreU + ' es un cachorro');
-                    console.log(nombreU + ' es un cachorro');
-                } else {
-                    alert(nombreU + ' es un perro adulto');
-                    console.log(nombreU + ' es perro adulto');
-                }
+        // asigna valor de una variable Nombre del perro
+
+        let nombreU = capitalizeNames(prompt(userName + ' ingresa el nombre de tu perro'));
+
+        //asigna el valor de una variable con un valor numerico edad del perro
+        let edad;
+        edad = parseInt(prompt('ingresa la edad del perro: ' + nombreU));
+
+        // por medio de condicionales comparamos el balor numerico para determinar si el perro es adulto o no
+        if (edad) {
+            if (edad < 2) {
+                alert(nombreU + ' es un cachorro');
+                console.log(nombreU + ' es un cachorro');
             } else {
-                alert('No ha ingresado un texto')
-                console.log('Texto no ingresado');
+                alert(nombreU + ' es un perro adulto');
+                console.log(nombreU + ' es perro adulto');
             }
-            selectOptions()
-        }    
-        if (optionConditionals==2){
-
-        
-            let userNameCond = capitalizeNames(prompt(userName+' ingresa un nombre: '));
-            let userLastName = capitalizeNames(prompt(userName+' ingresa el apellido: '));
-            if (userNameCond != '' && userLastName != '') {
-                alert('Este es su nombre completo. ' + userNameCond + ' ' + userLastName)
-                console.log('Este es su nombre completo. ' + userNameCond + ' ' + userLastName);
-            } else {
-                if (userNameCond == '') {
-                    alert('No pusiste tu nombre.')
-                }
-                if (userLastName == '') {
-                    alert('No pusiste tu apellido.')
-                }
-            }
-            selectOptions()
-        }    
-        if (optionConditionals==3) {
-            
-        
-            let sport = prompt(userName+' elige entre futbol y basquetbol, no hay dato sobre otro deporte')
-            console.log(sport);
-            console.log(sport.toLowerCase());
-            if (sport.toLowerCase() == 'basquetbol' || sport.toLowerCase() == 'basketball' || sport.toLowerCase() == 'futbol' || sport.toLowerCase() == 'football') {
-
-                if (sport.toLowerCase() == 'futbol' || sport.toLowerCase() == 'football') {
-                    alert('El mejor es Messi')
-                }
-                if (sport.toLowerCase() == 'basquetbol' || sport.toLowerCase() == 'basketball') {
-                    alert('El mejor fue Michael Jordan')
-                }
-            } else {
-                alert(userName+' no hay dato de ese deporte')
-            }
-            selectOptions()
+        } else {
+            alert('No ha ingresado un texto')
+            console.log('Texto no ingresado');
         }
-
-        salida(optionConditionals)
+        selectOptions()
     }
+    if (optionConditionals == 2) {
+        // solo muestra los valores ingresados concatenados
+
+        // asignacion de variables por prompt
+
+        let userNameCond = capitalizeNames(prompt(userName + ' ingresa un nombre: '));
+        let userLastName = capitalizeNames(prompt(userName + ' ingresa el apellido: '));
+
+        // validacion para no asignar un texto vacio
+        if (userNameCond != '' && userLastName != '') {
+            alert('Este es su nombre completo. ' + userNameCond + ' ' + userLastName)
+            console.log('Este es su nombre completo. ' + userNameCond + ' ' + userLastName);
+
+        } else {
+            if (userNameCond == '') {
+                alert('No pusiste tu nombre.')
+            }
+            if (userLastName == '') {
+                alert('No pusiste tu apellido.')
+            }
+        }
+        selectOptions()
+    }
+    if (optionConditionals == 3) {
+
+        //uso de diferentes condicionales y se muestra un resultado u otro dependiendo el caso
+
+        let sport = prompt(userName + ' elige entre futbol y basquetbol, no hay dato sobre otro deporte')
+        console.log(sport);
+        console.log(sport.toLowerCase());
+        if (sport.toLowerCase() == 'basquetbol' || sport.toLowerCase() == 'basketball' || sport.toLowerCase() == 'futbol' || sport.toLowerCase() == 'football') {
+
+            if (sport.toLowerCase() == 'futbol' || sport.toLowerCase() == 'football') {
+                alert('El mejor es Messi')
+            }
+            if (sport.toLowerCase() == 'basquetbol' || sport.toLowerCase() == 'basketball') {
+                alert('El mejor fue Michael Jordan')
+            }
+        } else {
+            alert(userName + ' no hay dato de ese deporte')
+        }
+        selectOptions()
+    }
+
+    salida(optionConditionals)
+}

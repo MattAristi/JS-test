@@ -1,6 +1,8 @@
 
 function desafioPPT(nombre){
     
+    //declaracion de variables
+
     let userNamePPT = nombre;
     let userChoosePPT = '';
     let cpuRandomChoose = '';
@@ -12,12 +14,14 @@ function desafioPPT(nombre){
     const papel = 'Papel';
     const tijera = 'Tijera';
 
-   
-
+    //PPT con un do while
     do {
+        // asigno valor por prompt de la opcion de juego elegida o para salir del juego
         userChoosePPT = parseInt(prompt('Elije una opción ingresando el número correspondiente:\n 1- Piedra.\n 2- Papel.\n 3-Tijera.\n 4- Salir del juego'));
+        // metodo para obtener un numero random.
         cpuRandomChoose = Math.round((Math.random() * 2) + 1);
-
+        
+        // switch para asignar valor al numero random de jugador cpu
         switch (cpuRandomChoose) {
             case 1:
                 cpuRandomChoose = piedra;
@@ -32,6 +36,7 @@ function desafioPPT(nombre){
                 alert('Cpu error Math.random-')
                 break;
         }
+        // switch para asignar valor de juego con el dato ingresado por prompt
         switch (userChoosePPT) {
             case 1:
                 userChoosePPT = piedra;
@@ -42,6 +47,7 @@ function desafioPPT(nombre){
             case 3:
                 userChoosePPT = tijera;
                 break;
+                // este case muestra el resultado de la partida al elegir la opcion de salir asignando valores a la variable de
             case 4:
                 userChoosePPT = 'esc';
                 resultadoFinalPPT = userScorePPT - cpuScorePPT;
