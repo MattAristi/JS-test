@@ -72,6 +72,12 @@ function objetosT() {
     }
     if (optionObject == 3) {
 
+        //unidades
+        const uDist= 'km'
+        const uMasa= 'kg'
+        const uVol= 'm³'
+        const uAcel= 'm/s\xB2'
+        const uDensidad='kg/m\xB2'
         // clases
 
         //la clase permite tener un constructor y los metodos separados adentro
@@ -81,31 +87,34 @@ function objetosT() {
         class Planeta {
             constructor(nombre, masa, volumen, diametro, gravedad, orbita, color, estrella, satelites) {
                 this.nombre = nombre;
-                this.masa = masa;
-                this.volumen = volumen;
-                this.diametro = diametro;
-                this.gravedad = gravedad;
-                this.orbita = orbita;
+                this.masa = [masa, uMasa];
+                this.volumen = [volumen, uVol];
+                this.diametro = [diametro, uDist];
+                this.gravedad = [gravedad, uAcel];
+                this.orbita = [orbita, uDist];
                 this.color = color;
                 this.estrella = estrella;
                 this.satelites = satelites;
             }
-            // metodos para el constructor
+            // meto,dos para el constructor
             density() {
-                this.densidad = this.masa / this.volumen
+                this.densidad = [this.masa[0] / this.volumen[0], uDensidad]
             }
+            
         }
-        // declaracion de objetos utilizando el constructor
+        
         const planeta1 = new Planeta('Tierra', 5.97 * Math.pow(10, 24), 1.08 * Math.pow(10, 12), 12704, 9.8, 147597870, 'azul', 'Sol', true)
         const planeta2 = new Planeta('Marte', 6.41 * Math.pow(10, 23), 1.61 * Math.pow(10, 11), 6780, 3.72, 227936640, 'rojo', 'Sol', true)
 
         // muestra por consola antes de aplicarle el metodo
-        console.log(planeta1);
+        console.log('antes  ',planeta1);
+        alert('hola')
         planeta1.density()
         // muestra por consola el dato ingresado por utilizando el metodo del constructor
         console.log('Densidad: ', planeta1.densidad);
         // muesttra por consola como quedan los dos planetas ingresados
         console.log(planeta1);
+        console.log(`${planeta1.masa[0]} ${planeta1.masa[1]}`);
         console.log(planeta2)
 
         selectOptions()
