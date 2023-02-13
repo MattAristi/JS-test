@@ -21,15 +21,20 @@ const arrays=() => {
 
         // declaracion de array con algunos elementos.
 
-        const carrito=['Carrefour', 1.21, {categoria: 'verduras', nombre: 'cebolla', precio: '120', cantidad: 1,}];
+        const arrayB = new Array ([0], [1], [2], [3], 'bla') // esta manera no se usa mucho
+        console.log('llamar array basico:');
+
+        const carrito=['Carrefour',[ 1.21, 0.21, 0.1], {categoria: 'verduras', nombre: 'cebolla', precio: '120', cantidad: 1,}];
 
 
-        // llamar a un elemento del array
+        // llamar a un array entero
         console.log('Array: Sintaxis y lectura.');
-        console.log('Array carrito', carrito);
-        console.log('Array carrito[0]', carrito[0]);
-        console.log('Array carrito[1]', carrito[1]);
-        console.log('Array carrito[2]', carrito[2]);
+        console.log('Array carrito: ', carrito);
+        //llamar a un elemento del array por su coordenada
+        console.log('Array carrito[0]: ', carrito[0]);
+        console.log('Array carrito[1]: ', carrito[1]);
+        console.log('Array carrito[2]: ', carrito[2]);
+        console.log('Array carrito[1][2]: ', carrito[1][2]);
 
         alert('En consola se muestra el array y cada uno de sus elementos')
 
