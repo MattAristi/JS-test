@@ -125,6 +125,8 @@ const arrays = () => {
     }
     if (optionArrays == 2) {
 
+        //app simulacion carrito de compras Jumbo
+
         // Carga de Array de productos simulando carga de datos backend
         const jumbo = [{
                 id: 1,
@@ -212,6 +214,14 @@ const arrays = () => {
             }
             alert(listCarrito);
         }
+        const borrarItemJumbo= ()=>{
+            let listaJumboBorrar = 'Seleccionar el producto que desea eliminar. \n'
+            for (const item of carritoJumbo) {
+                listaJumboBorrar= listaJumboBorrar + (`${item.id}- ${item.nombre} ${item.tipo} Cantidad: ${item.cant} Total: $${item.total} \n`)
+            }
+            let itemEliminar = parseInt(prompt(listaJumboBorrar))
+            return [itemEliminar]
+        }
 
         //app
         const JumboStore = () => {
@@ -234,12 +244,27 @@ const arrays = () => {
                 }
             }
             
-            console.log(carritoJumbo);
+            console.log('Agregó: ',carritoJumbo);
             JumboStore()
         }
         if (selectionJumboStore==2){
             mostrarCarritoJumbo(carritoJumbo)
+            console.log('Mostrar: ',carritoJumbo);
             JumboStore()
+        }
+
+        if (selectionJumboStore==3){
+            eliminarItem = borrarItemJumbo()
+            let i=0;
+            for (const item of carritoJumbo ) {
+                if (item.id == eliminarItem){
+                    carritoJumbo.splice(i,1);
+                }
+                i++
+            }
+            console.log('Despues de borrar: ',carritoJumbo);
+            JumboStore()
+
         }
 
         if (selectionJumboStore=='x'){
