@@ -17,7 +17,9 @@ function desafioPPT(nombre){
     //PPT con un do while
     do {
         // asigno valor por prompt de la opcion de juego elegida o para salir del juego
+
         userChoosePPT = parseInt(prompt('Elije una opción ingresando el número correspondiente:\n 1- Piedra.\n 2- Papel.\n 3-Tijera.\n 4- Salir del juego'));
+        
         // metodo para obtener un numero random.
         cpuRandomChoose = Math.round((Math.random() * 2) + 1);
         

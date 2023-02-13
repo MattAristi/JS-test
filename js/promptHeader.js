@@ -40,22 +40,8 @@ const wrongData = () => {
 }
 
 // Funcion que verifica que el dato ingresado se encuentar dentro d elos parametros.
-
-// const doWileCheckNumber = (wereTo, cantOpciones, opcion1, opcion2, opcion3, opcion4, opcion5) => {
-//     let selectedOption;
-//     do {
-//         selectedOption = prompt(`${(opcion1 ? opcion1 : '')} ${(opcion2 ? '\n'+opcion2 : '')} ${(opcion3 ? '\n'+opcion3 : '')} ${(opcion4 ? '\n'+opcion4 : '')} ${(opcion5 ? '\n'+opcion5 : '')}\n Para salir ingresa x. \n Para volver al menu anterior ingresa v.`)
-
-
-
-//         if ((isNaN(selectedOption) ? true :selectedOption)<1 || (isNaN(selectedOption) ? true : selectedOption>cantOpciones) &&  selectedOption!='x' &&  selectedOption!='v') {
-//             console.log('wrong ', selectedOption );
-//             wrongData();
-//         }
-//     } while ((isNaN(selectedOption) ? true :selectedOption)<1 || (isNaN(selectedOption) ? true : selectedOption>cantOpciones) &&  selectedOption!='x' &&  selectedOption!='v');
-//     return selectedOption
-// }
 const doWileMenu = (opciones) => {
+    
     // declaracion de variables.
     let selectedOption;
 
