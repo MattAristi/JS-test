@@ -46,16 +46,14 @@ const doWileCheckNumber = (wereTo, cantOpciones, opcion1, opcion2, opcion3, opci
     let selectedOption;
     do {
         selectedOption = prompt(`${(opcion1 ? opcion1 : '')} ${(opcion2 ? '\n'+opcion2 : '')} ${(opcion3 ? '\n'+opcion3 : '')} ${(opcion4 ? '\n'+opcion4 : '')} ${(opcion5 ? '\n'+opcion5 : '')}\n Para salir ingresa x. \n Para volver al menu anterior ingresa v.`)
-        console.log('primero',selectedOption);
+        
         
         
         if ((isNaN(selectedOption) ? true :selectedOption)<1 || (isNaN(selectedOption) ? true : selectedOption>cantOpciones) &&  selectedOption!='x' &&  selectedOption!='v') {
-            console.log('segundo',selectedOption);
             console.log('wrong ', selectedOption );
             wrongData();
         }
     } while ((isNaN(selectedOption) ? true :selectedOption)<1 || (isNaN(selectedOption) ? true : selectedOption>cantOpciones) &&  selectedOption!='x' &&  selectedOption!='v');
-    console.log('tercero',selectedOption);
     return selectedOption
 }
 // Asigna a una variable el nombre de usuario con cappital leter en la primera letra con la fincion capitalized.
