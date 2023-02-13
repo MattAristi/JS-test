@@ -1,6 +1,11 @@
 function iteraciones(userName) {
-
-    let optionIteration = doWileCheckNumber(iteraciones, 4, '1- Bucle for.', '2- Bucle while.', '3- Bucle do-while', '4- Swift')
+    let arrayOpcionesItera=[
+        '1- Bucle for.',
+        '2- Bucle while.',
+        '3- Bucle do-while',
+        '4- Swift'
+    ]
+    let optionIteration = doWileMenu(arrayOpcionesItera)
 
     if (optionIteration == 1) {
         for (let i = 1; i < 10; i++) {
@@ -119,5 +124,5 @@ function iteraciones(userName) {
         selectOptions()
     }
 
-salida(optionIteration)
+salida(optionIteration, selectOptions)
 }

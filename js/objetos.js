@@ -1,6 +1,10 @@
 function objetosT() {
-
-    let optionObject = doWileCheckNumber(objetosT, 3, '1- Sintaxis y declaracion de objetos', '2- funciones constructoras', '3- Clases, constructores y metodos')
+    let arrayOpcionesOb=[
+        '1- Sintaxis y declaracion de objetos',
+        '2- funciones constructoras',
+        '3- Clases, constructores y metodos'
+    ]
+    let optionObject = doWileMenu(arrayOpcionesOb)
 
     if (optionObject == 1) {
 
@@ -120,6 +124,6 @@ function objetosT() {
         selectOptions()
     }
 
-    salida(optionObject)
+    salida(optionObject, selectOptions)
 
 }

@@ -13,8 +13,12 @@
 function conditionals(userName) {
 
     //asigna el valor de option conditional mediante la funcion dowhilechecknumber para elegir la opcion deseada 
-
-    let optionConditionals = doWileCheckNumber(conditionals, 3, ' 1- <2', '2- &&', '3- ||')
+    let arrayOpcionesCond=[
+        '1- <2',
+        '2- &&',
+        '3- ||'
+    ]
+    let optionConditionals = doWileMenu(arrayOpcionesCond)
 
     // condicional > < = usando de comparativa la edad de un perro para determinar su adultez
     if (optionConditionals == 1) {
@@ -86,5 +90,5 @@ function conditionals(userName) {
         selectOptions()
     }
 
-    salida(optionConditionals)
+    salida(optionConditionals, selectOptions)
 }

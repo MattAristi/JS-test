@@ -4,7 +4,12 @@ function variables(userName) {
     1
     2
     3*/
-    let optionVariables = doWileCheckNumber(variables,2, '1- Declaracion de variables y arrays en string', '2- Manejo de variables con numeros y operaciones aritmeticas. ')
+
+    let ArrayOpcionesVar=[
+        '1- Declaracion de variables y arrays en string',
+        '2- Manejo de variables con numeros y operaciones aritmeticas. '
+    ]
+    let optionVariables = doWileMenu(ArrayOpcionesVar)
     if (optionVariables == 1) {
 
 
@@ -117,5 +122,5 @@ function variables(userName) {
         selectOptions()
     }
     //llama a funcion para volver al menu inicial o salir
-    salida(optionVariables)
+    salida(optionVariables, selectOptions)
 }

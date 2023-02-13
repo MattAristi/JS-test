@@ -1,6 +1,9 @@
 const arrays = () => {
-
-    let optionArrays = doWileCheckNumber(arrays, 2, '1- sintaxis y lectura.', '2- Simulacion carrito de compra.')
+    let arrayDeOpciones=[
+        '1- sintaxis y lectura.',
+        '2- Simulacion carrito de compra.'
+    ]
+    let optionArrays = doWileCheckNumber(arrayDeOpciones)
 
 
     if (optionArrays == 1) {
@@ -227,8 +230,13 @@ const arrays = () => {
         const JumboStore = () => {
 
         //menu de compra
+        let carritoOptions=[
+            '1- Agregar productos',
+            '2- mostrar carrito',
+            '3- Eliminar productos'
+        ]
 
-        let selectionJumboStore= doWileCheckNumber(JumboStore, 4, '1- Agregar productos', '2- mostrar carrito', '3- Eliminar productos');
+        let selectionJumboStore= doWileCheckNumber(carritoOptions);
 
         //agregar producto
 
@@ -267,12 +275,7 @@ const arrays = () => {
 
         }
 
-        if (selectionJumboStore=='x'){
-            salida(selectionJumboStore)
-        }
-        if (selectionJumboStore=='v'){
-            arrays()
-        }
+        salida(selectionJumboStore, arrays)
 
 
         }
@@ -280,5 +283,5 @@ const arrays = () => {
 
 
     }
-    salida(optionArrays)
+    salida(optionArrays, selectOptions)
 }
