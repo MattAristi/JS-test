@@ -28,6 +28,7 @@ function objetosT() {
         //para llamar a una propiedad o atributo hay dos maneras
         console.log(persona1.Nombre);
         console.log(persona2['Nombre']);
+        alert(persona1)
         selectOptions()
     }
 
@@ -66,6 +67,7 @@ function objetosT() {
             
 
             console.log(mueble1);
+            alert(mueble1)
 
             //solo en el caso de que exista comprobante lo verifique y muestre por consola
             if (mueble1.indcar == true) {
