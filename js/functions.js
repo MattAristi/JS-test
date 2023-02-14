@@ -92,15 +92,18 @@ const functions = () => {
             }
             return year
         }
-        // ejemplos de la funcion findNaturals
+        // prueba de la funcion findNaturals que devuelve el numero solo si es natural.
         let siete = findNaturals(7)
         let diez = findNaturals(10)
         console.log('siete: ', siete); //7
-        console.log('diez: ', diez); //''
+        console.log('diez: ', diez); //undefined
 
-        // llamando a la funcion para encontrar los numeros naturales que existen entre dos numeros pasados por parametros.
+        // llamando a la funcion de OS para encontrar los numeros naturales que existen entre dos numeros pasados por parametros.
 
         let numerosNaturales = numBetween(10, 150, findNaturals);
+
+        // llamando a la funcion de OS para encontrar los anios biciestos entre dos años pasados por parametro.
+
         let aniosBiciestos = numBetween(1776,1870,findLipYear)
         console.log('array de numeros naturales entre 10 y 30', numerosNaturales);
         console.log('array de años biciestos entre 1776 y 1870', aniosBiciestos);
