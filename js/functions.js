@@ -2,14 +2,15 @@ const functions = () => {
 
     //funciones de ordenn superior
     // son funciones que retornan una funcion o la recibe como parametro.
+    
+    //opciones de la pagina functions.
     const arrayOpcionesFunctions = [
         '1- Ejemplos que retornan funciones',
         '2- Ejemplos que se les pasan funciones por parametro'
     ]
-
     const optionsFunctions = doWileMenu(arrayOpcionesFunctions)
-    console.log(optionsFunctions);
-
+    
+    // funciones de orden mayor, ejemplos simples las funciones retornan funciones.
     if (optionsFunctions == 1) {
         function mayorQue(num) {
             return (m) => m < num
@@ -36,6 +37,7 @@ const functions = () => {
                 }
             }
         }
+        // guardamos la funcion que retorna una funcion en una variable
         let mayor = setConditional('mayor')
         let menor = setConditional('menor')
         let igual = setConditional('igual')
@@ -46,17 +48,18 @@ const functions = () => {
         console.log(igual(10, 8)); //false
     }
 
+    
+    // ejemplos de funciones pasadas por parametro
     if (optionsFunctions == 2) {
 
         // ejemplos de funciones pasadas por parametro
 
-        const numNaturalesBetween = (base, top, func) => {
+        const numBetween = (base, top, func) => {
             let arrayNumbers=[];
             let arrayNaturals=[];
             for (let index = base; index < top; index++) {
                 arrayNumbers.push(index)
             }
-            console.log(arrayNumbers);
             for (const item of arrayNumbers) {
                 let natural =  func(item)
                 if (natural!=undefined)  {            
@@ -79,6 +82,16 @@ const functions = () => {
             };
             return nNat
         }
+
+        const findLipYear = (num)=>{
+            let year;
+            for (let index = 1582; index < 4000; index=index+4) {
+                if (index==num){
+                year=num
+                }
+            }
+            return year
+        }
         // ejemplos de la funcion findNaturals
         let siete = findNaturals(7)
         let diez = findNaturals(10)
@@ -87,8 +100,12 @@ const functions = () => {
 
         // llamando a la funcion para encontrar los numeros naturales que existen entre dos numeros pasados por parametros.
 
-        let numerosNaturales = numNaturalesBetween(10, 150, findNaturals);
+        let numerosNaturales = numBetween(10, 150, findNaturals);
+        let aniosBiciestos = numBetween(1776,1870,findLipYear)
         console.log('array de numeros naturales entre 10 y 30', numerosNaturales);
+        console.log('array de años biciestos entre 1776 y 1870', aniosBiciestos);
+
+        
     }
 
     salida(optionsFunctions, selectOptions)
