@@ -66,10 +66,7 @@ const functions = () => {
             resultadoComp = igual(compareNum[0], compareNum[1])
             console.log(`Resultado de ${compareNum[0]} ${compareNum[2]} ${compareNum[1]}: `, resultadoComp);
         }
-
-        console.log(mayor(10, 8)); //true
-        console.log(menor(7, 8)); // false
-        console.log(igual(10, 10)); //false
+        
     }
 
     
