@@ -46,13 +46,26 @@ const functions = () => {
         do {
             compareNum= prompt(`Ingresa los numeros a comparar separados por un espacio y la condicion tambien separada por un espacio (Mayor menor o igual)`)
         compareNum=stringArray(compareNum)
-        if (isNaN(compareNum[0])  || isNaN(compareNum[1]) || (compareNum[2]== ('menor'||'mayor'||'igual') ? false: true)) {
+        if (isNaN(compareNum[0])  || isNaN(compareNum[1]) || ((compareNum[2]== 'mayor'||'menor'||'igual') ? false : true)) {
         wrongData() 
         }
 
-        } while (isNaN(compareNum[0])  || isNaN(compareNum[1]) || (compareNum[2]== ('menor'||'mayor'||'igual') ? false: true));
+        } while (isNaN(compareNum[0])  || isNaN(compareNum[1]) || ((compareNum[2]== 'mayor'||'menor'||'igual') ? false: true));
         
-        console.log(compareNum);
+        let resultadoComp;
+
+        if (compareNum[2]=='menor') {
+            resultadoComp = menor(compareNum[0], compareNum[1])
+            console.log(`Resultado de ${compareNum[0]} ${compareNum[2]} ${compareNum[1]}: `, resultadoComp);
+        }
+        if (compareNum[2]=='mayor') {
+            resultadoComp = mayor(compareNum[0], compareNum[1])
+            console.log(`Resultado de ${compareNum[0]} ${compareNum[2]} ${compareNum[1]}: `, resultadoComp);
+        }
+        if (compareNum[2]=='igual') {
+            resultadoComp = igual(compareNum[0], compareNum[1])
+            console.log(`Resultado de ${compareNum[0]} ${compareNum[2]} ${compareNum[1]}: `, resultadoComp);
+        }
 
         console.log(mayor(10, 8)); //true
         console.log(menor(7, 8)); // false
