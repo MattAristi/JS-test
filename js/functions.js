@@ -46,11 +46,11 @@ const functions = () => {
         do {
             compareNum= prompt(`Ingresa los numeros a comparar separados por un espacio y la condicion tambien separada por un espacio (Mayor menor o igual)`)
         compareNum=stringArray(compareNum)
-        if (isNaN(compareNum[0])  || isNaN(compareNum[1]) || ((compareNum[2]== 'mayor'||'menor'||'igual') ? false : true)) {
+        if (isNaN(compareNum[0])  || isNaN(compareNum[1]) || ((compareNum[2]== 'mayor') ? false : true & (compareNum[2]== 'menor') ? false : true & (compareNum[2]== 'igual') ? false : true)) {
         wrongData() 
         }
 
-        } while (isNaN(compareNum[0])  || isNaN(compareNum[1]) || ((compareNum[2]== 'mayor'||'menor'||'igual') ? false: true));
+        } while (isNaN(compareNum[0])  || isNaN(compareNum[1]) || ((compareNum[2]== 'mayor') ? false : true & (compareNum[2]== 'menor') ? false : true & (compareNum[2]== 'igual') ? false : true));
         
         let resultadoComp;
 
