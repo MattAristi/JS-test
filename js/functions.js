@@ -13,28 +13,27 @@ const functions = () => {
     // funciones de orden mayor, ejemplos simples las funciones retornan funciones.
     if (optionsFunctions == 1) {
         function mayorQue(num) {
-            return (m) => m < num
+            return (m) => m > num
         }
         // guardamos en una variable la funcion que nos devuelve la funcion de orden superior y le pasamos por parametro el numero que queremos unsar como escala
         let mayorQueDiez = mayorQue(10)
 
         // pasamos por parametro el valor que queremos verificar en la variable que contiene la funcon dentro
-        console.log(mayorQueDiez(12)); //true
-        console.log(mayorQueDiez(8)); //false
+        console.log('12 mayor que 10: ' ,mayorQueDiez(12)); //true
+        console.log('8 mayor que 10: ',mayorQueDiez(8)); //false
 
         function setConditional(cond) {
             if (cond == 'menor') {
-                return (a, b) => {
+                return (a, b) =>
                     a < b
-                }
+                
             } else if (cond == 'mayor') {
-                return (a, b) => {
+                return (a, b) => 
                     a > b
-                }
             } else if (cond == 'igual') {
-                return (a, b) => {
-                    a < b
-                }
+                return (a, b) => 
+                    a == b
+                
             }
         }
         // guardamos la funcion que retorna una funcion en una variable
@@ -42,10 +41,22 @@ const functions = () => {
         let menor = setConditional('menor')
         let igual = setConditional('igual')
 
+        let compareNum;
+        // ingresamos por prompt los numeros y la condicion a comparar.
+        do {
+            compareNum= prompt(`Ingresa los numeros a comparar separados por un espacio y la condicion tambien separada por un espacio (Mayor menor o igual)`)
+        compareNum=stringArray(compareNum)
+        if (isNaN(compareNum[0])  || isNaN(compareNum[1]) || (compareNum[2]== ('menor'||'mayor'||'igual') ? false: true)) {
+        wrongData() 
+        }
+
+        } while (isNaN(compareNum[0])  || isNaN(compareNum[1]) || (compareNum[2]== ('menor'||'mayor'||'igual') ? false: true));
+        
+        console.log(compareNum);
 
         console.log(mayor(10, 8)); //true
-        console.log(menor(10, 8)); // false
-        console.log(igual(10, 8)); //false
+        console.log(menor(7, 8)); // false
+        console.log(igual(10, 10)); //false
     }
 
     
